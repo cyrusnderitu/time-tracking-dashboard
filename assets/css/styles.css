@@ -66,7 +66,6 @@ h1{
 .exercise{grid-area: exercise; background-color: var(--lime-green);}
 .social{grid-area: social; background-color: var(--violet);}
 .selfCare{grid-area: selfCare; background-color: var(--soft-orange);}
-
 .grid_dash{
     display: grid;
     grid-template-areas:
@@ -169,12 +168,12 @@ h1{
         gap: 1.5rem;
     }
     .profile{grid-area: profile;}
-    .work{background-color: var(--light-red-y);}
-    .play{background-color: var(--soft-blue);}
-    .study{background-color: var(--light-red);}
-    .exercise{ background-color: var(--lime-green);}
-    .social{background-color: var(--violet);}
-    .selfCare{ background-color: var(--soft-orange);}
+    .work{grid-area: work; background-color: var(--light-red-y);}
+    .play{grid-area: play; background-color: var(--soft-blue);}
+    .study{grid-area: study; background-color: var(--light-red);}
+    .exercise{grid-area: exercise; background-color: var(--lime-green);}
+    .social{grid-area: social; background-color: var(--violet);}
+    .selfCare{grid-area: selfCare; background-color: var(--soft-orange);}
     .time_card{
         width: 200px;
         height: auto;
