@@ -43,15 +43,21 @@ h1{
 }
 .container{
     width: 80%;
-    height: fit-content;
     background: transparent;
 }
 .time_card{
-    width: 250px;
+    width: 220px;
     height: auto;
+    position: relative;
     background-color: var(--dark-blue);
     border-radius: .5rem;
     overflow: hidden;
+}
+.card_img{
+    position: absolute;
+    right: .5rem;
+    top: -5px;
+    z-index: 1;
 }
 .profile{grid-area: profile;}
 .work{grid-area: work; background-color: var(--light-red-y);}
@@ -69,7 +75,7 @@ h1{
     gap: 2rem 1.5rem;
 }
 .profile{
-    width: 250px;
+    width: fit-content;
     height: max-content;
     background-color: var(--dark-blue);
     border-radius: .5rem;
@@ -105,20 +111,43 @@ h1{
     font-weight: 300;
     letter-spacing: 1px;
     cursor: pointer;
+    padding-left: 1rem;
+}
+.active{
+    color: #fff;
 }
 .details{
-    margin-top: 3rem;
-    z-index: 100;
-    padding: 2rem;
-    border-radius: .75rem .75rem 0 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80%;
+    padding: 0 2rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    border-radius: .5rem;
     background-color: var(--dark-blue);
+    transition: .5 ease-out;
+}
+.details:hover{
+    background-color: var(--desaturated-blue);
+}
+.details:hover p,
+.details:hover h1,
+.details:hover span{
+    color: #fff;
+}
+.ellips_icon:hover{
+    fill: #fff;
 }
 .details .current{
     font-size: 3rem;
     font-weight: 300;
 }
-.details .previously{
-    font-size: 1rem;
+.details p{
+    font-size: 12px;
 }
 .menu{
     display: flex;
@@ -127,7 +156,105 @@ h1{
     margin-bottom: 1rem;
 }
 
+@media screen and (max-width: 968px) {
+    .container{
+        width: 95%;
+    }
+    .grid_dash{
+        display: grid;
+        grid-template-areas:
+        'profile work play '
+        'profile study exercise'
+        'profile social selfCare';
+        gap: 1.5rem;
+    }
+    .profile{grid-area: profile;}
+    .work{background-color: var(--light-red-y);}
+    .play{background-color: var(--soft-blue);}
+    .study{background-color: var(--light-red);}
+    .exercise{ background-color: var(--lime-green);}
+    .social{background-color: var(--violet);}
+    .selfCare{ background-color: var(--soft-orange);}
+    .time_card{
+        width: 200px;
+        height: auto;
+        position: relative;
+        background-color: var(--dark-blue);
+        border-radius: .5rem;
+    }
+    .details .current{
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+    .details p{
+        font-size: 10px;
+    }
+}
 
+@media screen and (max-width: 650px) {
+    .container{
+        width: 90%;
+        margin: 3rem 0;
+    }
+    .profile{
+        width: 100%;
+        height: max-content;
+        background-color: var(--dark-blue);
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+    .prof_data{
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+    }
+    .prof_data img{
+        width: 25%;
+        object-fit: cover;
+        border: 1px solid var(--pale-blue);
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 2rem;
+    }
+    .prof_data h1{
+        font-size: 1.5rem;
+        font-weight: 400;
+        display: block;
+    }
+    .prof_data br{
+        display: none;
+    }
+    .prof_period{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem 0;
+    }
+    .grid_dash{
+        width: 100%;
+        height: 100%;
+        grid-template-areas: unset;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+
+    }
+    .time_card{
+        width: 100%;
+        height: 200px;
+        position: relative;
+        background-color: var(--dark-blue);
+        border-radius: .5rem;
+    }
+    .profile{grid-area: profile;}
+    .work{background-color: var(--light-red-y);}
+    .play{background-color: var(--soft-blue);}
+    .study{background-color: var(--light-red);}
+    .exercise{ background-color: var(--lime-green);}
+    .social{background-color: var(--violet);}
+    .selfCare{ background-color: var(--soft-orange);}
+
+}
 
 
 
