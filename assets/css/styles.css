@@ -193,7 +193,7 @@ h1{
 @media screen and (max-width: 650px) {
     .container{
         width: 90%;
-        margin: 3rem 0;
+        margin: 3rem 0 .75rem;
     }
     .profile{
         width: 100%;
